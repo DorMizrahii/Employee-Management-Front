@@ -6,6 +6,6 @@ export function useEmployees() {
     isLoading,
     data: employees,
     error,
-  } = useQuery({ queryKey: ["employees"], queryFn: getEmployees });
+  } = useQuery({ queryKey: ["employee"], queryFn: getEmployees });
   return { isLoading, error, employees };
 }

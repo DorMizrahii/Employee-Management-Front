@@ -1,19 +1,14 @@
 import styled from "styled-components";
 import ConfirmDelete from "../../ui/ConfirmDelete";
 import CreateEmployeeForm from "./CreateEmployeesForm";
-import { useDeleteEmployee as useDeleteEmployee } from "./useDeleteEmployee";
+import { useDeleteEmployee } from "./useDeleteEmployee";
 import { HiPencil, HiTrash } from "react-icons/hi2";
 import Modal from "../../ui/Modal";
 import Table from "../../ui/Table";
 import Menus from "../../ui/Menus";
 
 
-const Employee = styled.div`
-  font-size: 1.6rem;
-  font-weight: 600;
-  color: var(--color-grey-600);
-  font-family: "Sono";
-`;
+
 
 const DetailStyle = styled.div`
   font-family: "Sono";

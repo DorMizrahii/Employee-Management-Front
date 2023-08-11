@@ -1,18 +1,19 @@
 export async function getEmployees() {
-  const res = await fetch("http://localhost:3000/api/employees")
+  const res = await fetch("http://localhost:3000/api/employees",)
   if (!res.ok) {
     console.error("Employees could not be loaded");
     throw new Error("Employees could not be loaded");
   }
-  const data = await res.json()
+  console.log("Response: ", res);
+  const {data} = await res.json()
   console.log("Showing",data)
   return data;
 }
 export async function deleteEmployee(id) {
   try {
     if (id) {
-      console.log(id);
-      const res = fetch(`http://localhost:3000/api/employees/${id}`, {
+      console.log("Delete",id);
+      const res = await fetch(`http://localhost:3000/api/employees/${id}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json"
@@ -42,7 +43,9 @@ export async function createEditEmployee(newEmployee, id) {
       if (!res.ok) {
         throw new Error("Data isn't valid.")
       }
+      console.log("Response: ",res);
       data = await res.json();
+      console.log("This is Data: ",data);
     }
   } catch (error) {
     throw new Error("Employee could not been created.")
@@ -51,7 +54,7 @@ export async function createEditEmployee(newEmployee, id) {
   try {
     if (id) {
       console.log("Editing",newEmployee);
-      const res = fetch(`http://localhost:3000/api/employees/${id}`, {
+      const res = await fetch(`http://localhost:3000/api/employees/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json"
@@ -59,8 +62,12 @@ export async function createEditEmployee(newEmployee, id) {
         body: JSON.stringify(newEmployee)
       })
       if (!res.ok) {
+        console.log(res.ok)
+        console.log("hi im here",res)
         throw new Error("Data isn't valid.")
       }
+      console.log("Response: ", res);
+      console.log(res);
       data = await res.json();
     }
   } catch (error) {

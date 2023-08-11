@@ -2,7 +2,7 @@ import EmployeeTable from "../features/Employees/EmployeesTable";
 import Heading from "../ui/Heading";
 import Row from "../ui/Row";
 
-import AddCabin from "../features/Employees/AddEmployee";
+import AddEmployee from "../features/Employees/AddEmployee";
 
 function Cabins() {
   return (
@@ -12,7 +12,7 @@ function Cabins() {
       </Row>
       <Row>
         <EmployeeTable />
-        <AddCabin />
+        <AddEmployee />
       </Row>
     </>
   );

@@ -1,5 +1,3 @@
-import styled from "styled-components";
-
 import Spinner from "../../ui/Spinner";
 import EmployeeRow from "./EmployeeRow";
 import { useEmployees } from "./useEmployees";
