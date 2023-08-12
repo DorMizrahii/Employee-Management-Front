@@ -1,8 +1,6 @@
-import { css, styled } from "styled-components";
+// eslint-disable-next-line no-unused-vars
+import { styled } from "styled-components";
 
-const test = css`
-  text-align: center;
-`;
 
 const Heading = styled.h1`
   ${(props) =>

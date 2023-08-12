@@ -1,6 +1,6 @@
 import Header from "./Header";
 import { styled } from "styled-components";
-import Cabin from "../pages/Employee"
+import Employee from "../pages/Employee"
 
 const StyledAppLayout = styled.div`
   display: grid;
@@ -27,7 +27,7 @@ function AppLayout() {
       <Header />
       <Main>
         <Container>
-          <Cabin />
+          <Employee />
         </Container>
       </Main>
     </StyledAppLayout>

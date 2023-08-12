@@ -6,10 +6,10 @@ function AddEmployee() {
   return (
     <div>
       <Modal>
-        <Modal.Open opens="cabin-form">
+        <Modal.Open opens="employee-form">
           <Button>Add new employee</Button>
         </Modal.Open>
-        <Modal.Window name="cabin-form">
+        <Modal.Window name="employee-form">
           <CreateEmployeeForm />
         </Modal.Window>
       </Modal>

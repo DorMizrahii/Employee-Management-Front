@@ -1,24 +1,30 @@
 export async function getEmployees() {
-  const res = await fetch("http://localhost:3000/api/employees",)
+  const res = await fetch("http://localhost:3000/api/employees", )
   if (!res.ok) {
     console.error("Employees could not be loaded");
     throw new Error("Employees could not be loaded");
   }
   console.log("Response: ", res);
-  const {data} = await res.json()
-  console.log("Showing",data)
+  const {
+    data
+  } = await res.json()
+  console.log("Showing", data)
   return data;
 }
 export async function deleteEmployee(id) {
   try {
     if (id) {
-      console.log("Delete",id);
+      console.log("Delete", id);
       const res = await fetch(`http://localhost:3000/api/employees/${id}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json"
         },
       })
+
+      if (!res.ok) {
+        throw new Error("Data isn't valid.")
+      }
     }
   } catch (error) {
     throw new Error("Employee could not been deleted.")
@@ -32,7 +38,7 @@ export async function createEditEmployee(newEmployee, id) {
   //a) create the Employee
   try {
     if (!id) {
-      console.log("Creating",newEmployee);
+      console.log("Creating", newEmployee);
       const res = await fetch("http://localhost:3000/api/employees", {
         method: "POST",
         headers: {
@@ -43,9 +49,9 @@ export async function createEditEmployee(newEmployee, id) {
       if (!res.ok) {
         throw new Error("Data isn't valid.")
       }
-      console.log("Response: ",res);
+      console.log("Response: ", res);
       data = await res.json();
-      console.log("This is Data: ",data);
+      console.log("This is Data: ", data);
     }
   } catch (error) {
     throw new Error("Employee could not been created.")
@@ -53,7 +59,7 @@ export async function createEditEmployee(newEmployee, id) {
   //b) Update Employee
   try {
     if (id) {
-      console.log("Editing",newEmployee);
+      console.log("Editing", newEmployee);
       const res = await fetch(`http://localhost:3000/api/employees/${id}`, {
         method: "PUT",
         headers: {
@@ -63,7 +69,7 @@ export async function createEditEmployee(newEmployee, id) {
       })
       if (!res.ok) {
         console.log(res.ok)
-        console.log("hi im here",res)
+        console.log("hi im here", res)
         throw new Error("Data isn't valid.")
       }
       console.log("Response: ", res);

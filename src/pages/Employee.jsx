@@ -4,7 +4,7 @@ import Row from "../ui/Row";
 
 import AddEmployee from "../features/Employees/AddEmployee";
 
-function Cabins() {
+function Employee() {
   return (
     <>
       <Row type="horizontal">
@@ -18,4 +18,4 @@ function Cabins() {
   );
 }
 
-export default Cabins;
+export default Employee;

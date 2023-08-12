@@ -8,7 +8,6 @@ import { Toaster } from "react-hot-toast";
 
 const queryClient = new QueryClient({
   defaultOptions: {
-    /*  queries: { staleTime: 60 * 1000 }, */
     queries: { staleTime: 0 },
   },
 });
@@ -19,7 +18,7 @@ function App() {
       <GlobalStyles />
       <BrowserRouter>
         <Routes>
-          <Route path="employees" element={<AppLayout />}>
+          <Route path="/" element={<AppLayout />}>
           </Route>
           <Route path="*" element={<PageNotFound />} />
         </Routes>
