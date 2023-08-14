@@ -3,10 +3,11 @@ import EmployeeRow from "./EmployeeRow";
 import { useEmployees } from "./useEmployees";
 import Table from "../../ui/Table";
 import Menus from "../../ui/Menus";
+import Pagination from "../../ui/Pagination";
 
 
 function EmployeeTable() {
-  const { isLoading, employees } = useEmployees();
+  const { isLoading, employees,count } = useEmployees();
   if (isLoading) return <Spinner />;
   return (
     <Menus>
@@ -24,6 +25,7 @@ function EmployeeTable() {
           data={employees}
           render={(employee) => <EmployeeRow employee={employee} key={employee.id} />}
         />
+        <Table.Footer><Pagination count={count}></Pagination></Table.Footer>
       </Table>
     </Menus>
   );

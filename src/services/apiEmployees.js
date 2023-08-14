@@ -1,16 +1,35 @@
-export async function getEmployees() {
-  const res = await fetch("http://localhost:3000/api/employees", )
-  if (!res.ok) {
+export async function getEmployees(pageNumber) {
+  console.log("before fetch");
+  const [res1, res2] = await  Promise.all([fetch(`http://localhost:3000/api/employees?page=${pageNumber}`), fetch(`http://localhost:3000/api/employees/getNumberOfEmployees`)])
+  console.log("after fetch");
+
+  if (!res1.ok || !res2.ok) {
     console.error("Employees could not be loaded");
     throw new Error("Employees could not be loaded");
   }
-  console.log("Response: ", res);
-  const {
-    data
-  } = await res.json()
-  console.log("Showing", data)
-  return data;
+  const [
+    {data},{data:count}
+   ] = await Promise.all([res1.json(), res2.json()])
+  console.log("Showing", data, count)
+  return {data,count};
 }
+
+// export async function getTheNumberOfEmployees() {
+//   const res = await fetch(`http://localhost:3000/api/employees/getNumberOfEmployees`, )
+//   if (!res.ok) {
+//     console.error("Employees could not be loaded");
+//     throw new Error("Employees could not be loaded");
+//   }
+//   console.log("Response: ", res);
+//   const {
+//     data
+//   } = await res.json()
+//   console.log("Showing", data)
+//   return data;
+// }
+
+
+
 export async function deleteEmployee(id) {
   try {
     if (id) {
