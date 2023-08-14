@@ -6,7 +6,7 @@ export function useEditEmployee() {
   const { mutate: editEmployee, isLoading: isEditing } = useMutation({
     mutationFn: ({newEmployeeData, id }) => createEditEmployee(newEmployeeData, id),
     onSuccess: () => {
-      toast.success("Employee succeddfully edited");
+      toast.success("Employee successfully edited");
       queryClient.invalidateQueries({ queryKey: ["employee"] });
     },
     onError: (err) => toast.error(err.message),

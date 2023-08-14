@@ -1,5 +1,6 @@
 import { createContext, useContext } from "react";
 import styled from "styled-components";
+import usePrevPage from "../hooks/usePrevPage";
 
 const StyledTable = styled.div`
   border: 1px solid var(--color-grey-200);
@@ -59,6 +60,7 @@ const Empty = styled.p`
   text-align: center;
   margin: 2.4rem;
 `;
+
 const TableContext = createContext();
 function Table({ columns, children }) {
   return (
@@ -83,8 +85,10 @@ function Row({ children }) {
     </StyledRow>
   );
 }
-function Body({ data, render }) {
-  if (!data.length) return <Empty>No data to show at this moment</Empty>;
+function Body({ data, render,count }) {
+  const {prev} = usePrevPage();
+  if (!data.length && !count) return <Empty>No data to show at this moment</Empty>;
+  if (!data.length && count) return prev();
   return <StyledBody>{data.map(render)}</StyledBody>;
 }
 

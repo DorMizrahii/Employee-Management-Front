@@ -22,6 +22,7 @@ function EmployeeTable() {
           <div></div>
         </Table.Header>
         <Table.Body
+        count = {count}        
           data={employees}
           render={(employee) => <EmployeeRow employee={employee} key={employee.id} />}
         />
