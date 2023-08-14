@@ -9,7 +9,6 @@ import Menus from "../../ui/Menus";
 
 
 
-
 const DetailStyle = styled.div`
   font-family: "Sono";
   font-weight: 600;
@@ -52,7 +51,8 @@ function EmployeeRow({ employee }) {
               <ConfirmDelete
                 resourceName="employee"
                 disabled={isDeleting}
-                onConfirm={() => deleteEmployee(EmployeeId)}
+                onConfirm={() => deleteEmployee(EmployeeId)                  
+                }
               />
             </Modal.Window>
           </Menus.Menu>

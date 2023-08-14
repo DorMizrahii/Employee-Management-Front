@@ -86,9 +86,8 @@ function Row({ children }) {
   );
 }
 function Body({ data, render,count }) {
-  const {prev} = usePrevPage();
+  
   if (!data.length && !count) return <Empty>No data to show at this moment</Empty>;
-  if (!data.length && count) return prev();
   return <StyledBody>{data.map(render)}</StyledBody>;
 }
 

@@ -2,6 +2,7 @@ import { HiChevronLeft, HiChevronRight } from "react-icons/hi2";
 import { useSearchParams } from "react-router-dom";
 import styled from "styled-components";
 import usePrevPage from "../hooks/usePrevPage";
+import { PAGE_SIZE } from "../config/configConstants";
 
 const StyledPagination = styled.div`
   width: 100%;
@@ -59,7 +60,6 @@ const PaginationButton = styled.button`
   }
 `;
 
-const PAGE_SIZE = 4;
 
 function Pagination({ count }) {
   const {prev:prevPage,currentPage} = usePrevPage()
