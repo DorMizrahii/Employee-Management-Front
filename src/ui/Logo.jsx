@@ -5,14 +5,14 @@ const StyledLogo = styled.div`
 `;
 
 const Img = styled.img`
-  height: 9.6rem;
+  height: 50px;
   width: auto;
 `;
 
 function Logo() {
   return (
     <StyledLogo>
-      <Img src="../../public/employeesPhoto.png" alt="Logo" />
+      <Img src="../../public/checkpointICON2.png" alt="Logo" />
     </StyledLogo>
   );
 }
