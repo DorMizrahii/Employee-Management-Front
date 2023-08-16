@@ -14,22 +14,6 @@ export async function getEmployees(pageNumber) {
   return {data,count};
 }
 
-// export async function getTheNumberOfEmployees() {
-//   const res = await fetch(`http://localhost:3000/api/employees/getNumberOfEmployees`, )
-//   if (!res.ok) {
-//     console.error("Employees could not be loaded");
-//     throw new Error("Employees could not be loaded");
-//   }
-//   console.log("Response: ", res);
-//   const {
-//     data
-//   } = await res.json()
-//   console.log("Showing", data)
-//   return data;
-// }
-
-
-
 export async function deleteEmployee(id) {
   try {
     if (id) {

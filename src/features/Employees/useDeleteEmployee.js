@@ -10,6 +10,7 @@ import {
 } from "react-hot-toast";
 import usePrevPage from "../../hooks/usePrevPage";
 import { useEmployees } from "./useEmployees";
+import { PAGE_SIZE } from "../../config/configConstants";
 
 export function useDeleteEmployee() {
   const {employees:data,count} = useEmployees();
@@ -23,7 +24,7 @@ export function useDeleteEmployee() {
     onSuccess: () => {
       toast.success("Employee successfully deleted!");
       // debugger;
-      if (data.length === 1 && count > 4) prev();
+      if (data.length === 1 && count > PAGE_SIZE) prev();
       queryClient.invalidateQueries({
         queryKey: ["employee"]
       });

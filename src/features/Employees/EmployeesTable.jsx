@@ -11,15 +11,14 @@ function EmployeeTable() {
   if (isLoading) return <Spinner />;
   return (
     <Menus>
-      <Table columns="1fr 1fr 1fr 1fr 0.1fr">
+      <Table columns="1fr 1fr 1fr 1fr 1.5fr 0.1fr">
         <Table.Header role="row">
           <div>ID</div>
           <div>First Name</div>
           <div>Last Name</div>
+          <div >Nick Name </div>
           <div>Email</div>
-          <div></div>
 
-          <div></div>
         </Table.Header>
         <Table.Body
         count = {count}        

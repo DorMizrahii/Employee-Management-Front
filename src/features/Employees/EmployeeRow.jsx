@@ -21,6 +21,7 @@ function EmployeeRow({ employee }) {
     firstName,
     lastName,
     email,
+    nickname,
     id: EmployeeId,
   } = employee;
   
@@ -29,7 +30,9 @@ function EmployeeRow({ employee }) {
       <DetailStyle>{EmployeeId}</DetailStyle>
       <DetailStyle>{firstName}</DetailStyle>
       <DetailStyle>{lastName}</DetailStyle>
+      <DetailStyle>{nickname}</DetailStyle>
       <DetailStyle>{email}</DetailStyle>
+
       <div>
         <Modal>
           <Menus.Menu>
