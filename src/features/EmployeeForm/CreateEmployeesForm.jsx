@@ -78,16 +78,16 @@ function CreateEmployeeForm({EmployeeToEdit = {}, onCloseModal }) {
         />
       </FormRow>
 
-      <FormRow FormRow label = "Last Name"
+      <FormRow FormRow label = "Nick Name"
       error = {
-        errors?.NickName?.message
+        errors?.nickname?.message
       } >
         <Input
           type="text"
-          id = "NickName"
+          id = "nickName"
           disabled={isWorking}
           {
-            ...register("NickName", {
+            ...register("nickname", {
             required: "Nick Name is Required"
           })}
         />

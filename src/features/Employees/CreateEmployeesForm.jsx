@@ -99,10 +99,10 @@ function CreateEmployeeForm({EmployeeToEdit = {}, onCloseModal }) {
       } >
         <Input
           type="text"
-          id = "Nick Name"
+          id = "nickName"
           disabled={isWorking}
           {
-            ...register("nickName", {
+            ...register("nickname", {
             required: "Nick Name is Required"
           })}
         />

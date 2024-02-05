@@ -16,7 +16,7 @@ function EmployeeTable() {
           <div>ID</div>
           <div>First Name</div>
           <div>Last Name</div>
-          <div >Nick Name </div>
+          <div >Nick Name</div>
           <div>Email</div>
 
         </Table.Header>
